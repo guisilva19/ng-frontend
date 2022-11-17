@@ -1,13 +1,15 @@
-import Header from "./components/Header/header";
+import { ToastContainer } from "react-toastify";
 import { GlobalStyle } from "./global/globalStyle";
+import RoutesMain from "./routes";
 
 function App() {
   return (
     <>
-    <Header/>
-    <GlobalStyle/>
+      <ToastContainer />
+      <GlobalStyle />
+      <RoutesMain />
     </>
-  )
+  );
 }
 
 export default App;

@@ -24,14 +24,12 @@ export const HeaderContainer = styled.header`
 
         
         h1{
-            font-family: 'Montserrat';
             font-weight: bolder;
             font-size: 40px;
         }
         
 
         img{
-            fill: white;
             width: 80px;
         }
     }
@@ -47,18 +45,18 @@ export const HeaderContainer = styled.header`
 
         color: white;
 
+        transition: 0.3s;
         border-right: 4px solid transparent;
-
+        cursor: pointer;
         &:hover{
         border-right: 4px solid white;
-
+        
         }
 
         svg{
         fill: white;
         }
         h3{
-            font-family: 'Montserrat';
             font-weight: 500;
         }
     }
@@ -84,17 +82,13 @@ ul {
     cursor: pointer;
 
     border-right: 4px solid transparent;
-
+    transition: 0.3s;
     &:hover{
     border-right: 4px solid white;
 
     }
-        svg{
-            fill: white;
-        }
 
         h3{
-            font-family: 'Montserrat';
             font-weight: 500;
         }
     }   

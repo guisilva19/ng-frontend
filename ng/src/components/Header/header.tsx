@@ -19,7 +19,7 @@ const Header = () => {
             <h3>Dashboard</h3>
           </li>
           <li>
-            <BiTransfer size={30} color='white'/>
+            <BiTransfer size={30}/>
             <h3>Transactions</h3>
           </li>
           <li>
