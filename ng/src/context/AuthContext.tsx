@@ -1,6 +1,10 @@
-import { createContext, ReactNode, useState } from "react";
-import { useNavigate } from "react-router-dom";
-
+import {
+  createContext,
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  useState,
+} from "react";
 
 interface IContextProps {
   children: ReactNode;
@@ -12,16 +16,17 @@ export interface IUser {
 }
 
 interface IContextProvider {
-  isUser: Object;
+  isOpenModal: boolean;
+  setIsOpenModal: Dispatch<SetStateAction<boolean>>;
 }
 
 export const Context = createContext<IContextProvider>({} as IContextProvider);
 
 const ContextProvider = ({ children }: IContextProps) => {
-  const [isUser, setIsUser] = useState({});
+  const [isOpenModal, setIsOpenModal] = useState(false);
 
   return (
-    <Context.Provider value={{ isUser }}>
+    <Context.Provider value={{ isOpenModal, setIsOpenModal }}>
       {children}
     </Context.Provider>
   );

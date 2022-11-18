@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { GrAdd } from "react-icons/gr";
+import { Context } from "../../context/AuthContext";
 import { Container } from "./style";
 
 const Balance = () => {
+  const { setIsOpenModal } = useContext(Context);
+
   const balance = 100.5;
   return (
     <Container>
@@ -12,7 +16,7 @@ const Balance = () => {
         </span>
       </div>
       <button>
-        <GrAdd size={20} />
+        <GrAdd size={20} onClick={() => setIsOpenModal(true)} />
       </button>
     </Container>
   );

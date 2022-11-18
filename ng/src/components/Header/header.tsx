@@ -1,7 +1,7 @@
 import { HeaderContainer, Navigation } from "./style";
 import { MdDashboard } from "react-icons/md";
 import { IoMdSettings } from 'react-icons/io'
-import { BiTransfer, BiLogOut } from 'react-icons/bi'
+import { BiLogOut } from 'react-icons/bi'
 const Header = () => {
   return (
     <HeaderContainer>
@@ -18,10 +18,7 @@ const Header = () => {
             <MdDashboard size={30}/>
             <h3>Dashboard</h3>
           </li>
-          <li>
-            <BiTransfer size={30}/>
-            <h3>Transactions</h3>
-          </li>
+         
           <li>
           <IoMdSettings size={30}/>
             <h3>Setings</h3>
