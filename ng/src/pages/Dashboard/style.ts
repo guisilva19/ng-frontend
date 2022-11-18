@@ -21,3 +21,9 @@ width: 85vw;
     
 }
 `
+
+export const Transactions = styled.div`
+
+display: flex;
+gap: 10px;
+`

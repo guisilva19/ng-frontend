@@ -43,12 +43,28 @@ ul{
     height: 90%;
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
     gap: 10px;
+
+    &::-webkit-scrollbar{
+        width: 7px;
+    }
+
+    &::-webkit-scrollbar-track{
+        width: 10px;
+    }
+    
+    
+    &::-webkit-scrollbar-thumb{
+        background-color: #c1c1c1;
+        border-radius: 20px;
+    }
+    
     
     li{
         display: flex;
         width: 90%;
-        height: 20%;
+        min-height: 20%;
         
         margin: 0 auto;
         border-radius: 10px;
@@ -56,7 +72,7 @@ ul{
         align-items: center;
         
         
-        background-color: var(--red-ligth);
+        background-color: var(--green-ligth);
     }
 }
     
