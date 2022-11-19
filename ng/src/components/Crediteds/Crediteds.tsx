@@ -1,6 +1,11 @@
+import { useContext } from "react";
+import { Context } from "../../context/AuthContext";
 import { Container } from "./style";
 
+import React from "react";
+
 const Crediteds = () => {
+  const { credited } = useContext(Context);
 
   return (
     <Container>
@@ -8,10 +13,18 @@ const Crediteds = () => {
         <h2>Credited</h2>
       </div>
       <ul>
-        <li>
-          <h4>R$ 150,00</h4>
-          <span>2022-11-17T13:01:43</span>
-        </li>
+        {credited.map((credit) => (
+          <li key={credit.id}>
+            <h4>R$ {credit.value.toFixed(2).replace(".", ",")}</h4>
+            <div>
+              <p>
+                Date:{" "}
+                {credit.createdAt.split("T")[0].split("-").reverse().join("/")}
+              </p>
+              <p>Hours: {credit.createdAt.split("T")[1].split(".")[0]}</p>
+            </div>
+          </li>
+        ))}
       </ul>
     </Container>
   );

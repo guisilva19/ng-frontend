@@ -1,114 +1,177 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const animationRegister = keyframes`
+0%{
+    -webkit-transform:translateY(-500px);
+    transform:translateY(-500px);
+    -webkit-animation-timing-function:ease-in;
+    animation-timing-function:ease-in;
+    opacity:0
+}
+    38%{
+        -webkit-transform:translateY(0);
+        transform:translateY(0);
+        -webkit-animation-timing-function:ease-out;
+        animation-timing-function:ease-out;
+        opacity:1
+        }
+        55%{
+        -webkit-transform:translateY(-65px);
+        transform:translateY(-65px);
+        -webkit-animation-timing-function:ease-in;
+        animation-timing-function:ease-in
+        }
+        72%{
+        -webkit-transform:translateY(0);
+        transform:translateY(0);
+        -webkit-animation-timing-function:ease-out;
+        animation-timing-function:ease-out
+        }
+        81%{
+          -webkit-transform:translateY(-28px);
+          transform:translateY(-28px);
+          -webkit-animation-timing-function:ease-in;
+          animation-timing-function:ease-in
+          }
+          90%{
+            -webkit-transform:translateY(0);
+            transform:translateY(0);
+            -webkit-animation-timing-function:ease-out;
+            animation-timing-function:ease-out
+            }
+            95%{
+              -webkit-transform:translateY(-8px);
+              transform:translateY(-8px);
+              -webkit-animation-timing-function:ease-in;
+              animation-timing-function:ease-in
+              }
+              100%{
+                -webkit-transform:translateY(0);
+                transform:translateY(0);
+                -webkit-animation-timing-function:ease-out;
+                animation-timing-function:ease-out
+                }
+`;
 
 export const Container = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background-color: #d5eeff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-width: 100vw;
-height: 100vh;
-background-color: #D5EEFF;
-display: flex;
-align-items: center;
-justify-content: center;
 
-section{
+  @media screen and (max-width: 700px) {
+    background-color: var(--blue-primary);
+
+    section {
+      justify-content: center;
+
+      .container-image {
+        display: none;
+      }
+
+      div {
+        min-width: 280px;
+        border-radius: 20px;
+      }
+    }
+  }
+
+  section {
+  animation: ${animationRegister} 1.1s both;
+
     display: flex;
     width: 80%;
 
-    @media screen and (min-width: 1024px){
-        width: 858px;
+    @media screen and (min-width: 1024px) {
+      width: 858px;
     }
 
-    div{
-        width: 50%;
+    div {
+      width: 50%;
     }
 
-    .container-image{
-            background-color: #020557;
-            border-radius: 0 20px 20px 0;
-        
-            img{
-            width: 100%;
-            border-radius: 0 20px 20px 0;
+    .container-image {
+      background-color: #020557;
+      border-radius: 0 20px 20px 0;
 
-        }
+      img {
+        width: 100%;
+        border-radius: 0 20px 20px 0;
+      }
     }
-}
-
-
-`
-
-
+  }
+`;
 
 export const ContainerRegister = styled.div`
+  background-color: white;
 
-background-color: white;
+  border-radius: 20px 0 0 20px;
 
-border-radius: 20px 0 0 20px;
+  display: flex;
+  flex-direction: column;
 
-display: flex;
-flex-direction: column;
+  gap: 10px;
 
-gap: 10px;
-
-h2{
+  h2 {
     padding: 50px 0 0 50px;
     font-weight: bolder;
-
-}
-.createAccountParaph{
+  }
+  .createAccountParaph {
     font-weight: 600;
     opacity: 0.4;
     padding-left: 50px;
-}
+  }
 
-form{
+  form {
     display: flex;
     flex-direction: column;
     width: 60%;
     margin: 30px auto 20px auto;
     gap: 20px;
 
-    input{
-        border: unset;
-        border-bottom: solid 2px rgba(0, 0, 0, 0.3);
-    
-       input:focus{
+    input {
+      border: unset;
+      border-bottom: solid 2px rgba(0, 0, 0, 0.3);
+
+      &:focus {
         box-shadow: 0 0 0 0;
         outline: 0;
-       }
+      }
     }
 
-    .message-error{
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        font-size: 12px;
-        color: red;
-        margin: -10px 0;
+    .message-error {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      color: red;
+      margin: -10px 0;
     }
 
-    button{
-        background-color: #020557;
-        color: white;
-        font-weight: 600;
-        margin-top: 20px;
-        padding: 15px 0;
-        border: unset;
-        border-radius: 10px;
+    button {
+      background-color: #020557;
+      color: white;
+      font-weight: 600;
+      margin-top: 20px;
+      padding: 15px 0;
+      border: unset;
+      border-radius: 10px;
     }
-}
+  }
 
-span{
+  span {
     display: flex;
     margin: 0 auto;
     opacity: 0.5;
     font-weight: 600;
-}
+  }
 
-.signParaph{
+  .signParaph {
     display: flex;
     margin: 10px auto;
     opacity: 0.5;
-}
-
-`
-
+  }
+`;

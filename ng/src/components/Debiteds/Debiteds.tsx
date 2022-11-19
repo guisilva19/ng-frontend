@@ -1,16 +1,28 @@
+import { useContext } from "react";
+import { Context } from "../../context/AuthContext";
 import { Container } from "./style";
 
 const Debiteds = () => {
+  const { debited } = useContext(Context);
+
   return (
     <Container>
       <div>
         <h2>Debited</h2>
       </div>
       <ul>
-        <li>
-          <h4>R$ -150,00</h4>
-          <span>2022-11-17T13:01:43</span>
-        </li>
+        {debited.map((debit) => (
+          <li key={debit.id}>
+            <h4>R$ -{debit.value.toFixed(2).replace('.', ',')}</h4>
+            <div>
+              <p>
+                Date:{" "}
+                {debit.createdAt.split("T")[0].split("-").reverse().join("/")}
+              </p>
+              <p>Hours: {debit.createdAt.split("T")[1].split(".")[0]}</p>
+            </div>
+          </li>
+        ))}
       </ul>
     </Container>
   );

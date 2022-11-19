@@ -3,11 +3,15 @@ import session from "../../assets/session.png";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Api } from "../../services/Api";
-import { IUser } from "../../context/AuthContext";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from 'react-hook-form'
 import { schemaUser } from "../../validators";
+import { IUser } from "../../interfaces";
+import { useContext } from "react";
+import { Context } from "../../context/AuthContext";
 const Session = () => {
+  const {login} = useContext(Context)
+  
   const {
     register,
     handleSubmit,
@@ -15,24 +19,7 @@ const Session = () => {
   } = useForm<IUser>({
     resolver: yupResolver(schemaUser),
   });
-
-  const navigate = useNavigate();
-
-  const login = async (data: IUser) => {
-    await Api.post("/login", data)
-      .then(() => {
-        toast.success("Cadastro feito com sucesso! Faça o login.", {
-          autoClose: 2000,
-        });
-        navigate("/dashboard", { replace: true });
-      })
-      .catch((err) => {
-        console.log("err", err);
-        toast.error("Algo deu errado! Confira todos os campos preenchidos", {
-          autoClose: 2000,
-        });
-      });
-  };
+ 
 
   return (
     <Container>

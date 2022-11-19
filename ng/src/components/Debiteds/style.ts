@@ -12,6 +12,12 @@ display: flex;
 flex-direction: column;
 gap: 30px;
 
+@media screen and (max-width: 1230px) {
+
+    width: 300px;
+    height: 370px;
+}
+
 div{
     display: flex;
     justify-content: space-between;
@@ -58,6 +64,11 @@ ul{
         
         
         background-color: var(--red-ligth);
+        
+        div{
+        display: flex;
+        flex-direction: column;
+        }
     }
 }
     

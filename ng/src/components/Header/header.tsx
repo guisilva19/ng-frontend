@@ -1,8 +1,14 @@
 import { HeaderContainer, Navigation } from "./style";
 import { MdDashboard } from "react-icons/md";
 import { IoMdSettings } from 'react-icons/io'
-import { BiLogOut } from 'react-icons/bi'
+import { BiLogOut, BiTransfer } from 'react-icons/bi'
+import { useContext } from "react";
+import { Context } from "../../context/AuthContext";
 const Header = () => {
+  const { logout } = useContext(Context)
+
+
+
   return (
     <HeaderContainer>
       <div className="logo">
@@ -18,15 +24,22 @@ const Header = () => {
             <MdDashboard size={30}/>
             <h3>Dashboard</h3>
           </li>
-         
+
           <li>
-          <IoMdSettings size={30}/>
+            <BiTransfer size={30}/>
+            <h3>Transactions</h3>
+          </li>
+
+          <li>
+            <IoMdSettings size={30}/>
             <h3>Setings</h3>
           </li>
+
+
         </ul>
       </Navigation>
 
-      <div className="container-logout">
+      <div className="container-logout" onClick={() => logout()}>
         <BiLogOut size={30}/>
         <h3>Logout</h3>
       </div>

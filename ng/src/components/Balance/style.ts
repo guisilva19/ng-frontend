@@ -10,6 +10,10 @@ padding: 15px;
 display: flex;
 justify-content: space-between;
 
+@media screen and (max-width: 950px) {
+    margin-left: 40px;
+}
+
 div{
 display: flex;
 flex-direction: column;

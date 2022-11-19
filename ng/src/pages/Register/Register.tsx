@@ -1,16 +1,17 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../../assets/register.png";
 import { ContainerRegister, Container } from "./style";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { schemaUser } from "../../validators";
-// import { useContext } from "react";
-import { Context, IUser } from "../../context/AuthContext";
+import { Context } from "../../context/AuthContext";
+import { IUser } from "../../interfaces";
+import { useContext } from "react";
 import { BiErrorCircle } from "react-icons/bi";
-import { Api } from "../../services/Api";
-import { toast } from "react-toastify";
 
 const Register = () => {
+  const { registerUser } = useContext(Context)
+
   const {
     register,
     handleSubmit,
@@ -18,24 +19,6 @@ const Register = () => {
   } = useForm<IUser>({
     resolver: yupResolver(schemaUser),
   });
-
-  const navigate = useNavigate();
-
-  const registerUser = async (data: IUser) => {
-    // console.log(data)
-
-    try {
-    await Api.post("/register", data)
-    toast.success("Cadastro feito com sucesso! Faça o login.", {
-            autoClose: 2000,
-          });
-      
-    } catch (err) {
-      toast.error("Algo deu errado! Confira todos os campos preenchidos", {
-              autoClose: 2000,
-            });
-    }
-  };
 
   return (
     <Container>

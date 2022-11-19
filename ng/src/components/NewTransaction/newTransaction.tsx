@@ -3,7 +3,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { schemaNewTransaction } from "../../validators";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { BiErrorCircle } from "react-icons/bi";
 import { Context } from "../../context/AuthContext";
 
@@ -13,7 +13,7 @@ interface ITransaction {
 }
 
 const NewTransaction = () => {
-  const{ isOpenModal, setIsOpenModal } = useContext(Context)
+  const{ isOpenModal, setIsOpenModal, newTransaction } = useContext(Context)
 
   const {
     register,
@@ -23,9 +23,7 @@ const NewTransaction = () => {
     resolver: yupResolver(schemaNewTransaction),
   });
 
-  const newTransaction = (data: ITransaction) => {
-    // console.log(data);
-  };
+  
 
   return (
     <Section style={{display: isOpenModal ? 'flex' : 'none'}}>

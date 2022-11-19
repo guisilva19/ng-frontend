@@ -1,4 +1,16 @@
-import styled from "styled-components"
+import styled, { keyframes } from "styled-components"
+
+
+const animationHeader = keyframes`
+from{
+    opacity: 0;
+}
+
+to{
+    opacity: 1;
+}
+
+`
 
 export const HeaderContainer = styled.header`
     width: 30vw;
@@ -8,15 +20,26 @@ export const HeaderContainer = styled.header`
     flex-direction: column;
     justify-content: space-between;
 
+    animation: ${animationHeader} .5s;
+
     box-shadow: 1px 4px 4px 0px rgba(0,0,0,0.75);  
     
     @media screen and (min-width: 1024px) {
         width: 300px;
     }
+
+    @media screen and (max-width: 950px) {
+        position: fixed;
+    }
+
+    @media screen and (max-width: 750px) {
+    width: 55px;
+    }
     
     .logo{
         display: flex;
         color: white;
+        justify-content: center;
         align-items: center;
         padding: 20px;
         gap: 20px;
@@ -26,11 +49,18 @@ export const HeaderContainer = styled.header`
         h1{
             font-weight: bolder;
             font-size: 40px;
+            @media screen and (max-width: 750px) {
+                display: none;
+            } 
+             
         }
         
 
         img{
             width: 80px;
+            @media screen and (max-width: 750px) {
+            width: 40px;
+    }
         }
     }
 
@@ -48,6 +78,11 @@ export const HeaderContainer = styled.header`
         transition: 0.3s;
         border-right: 4px solid transparent;
         cursor: pointer;
+
+        @media screen and (max-width: 750px) {
+                justify-content: center;
+            } 
+            
         &:hover{
         border-right: 4px solid white;
         
@@ -58,6 +93,9 @@ export const HeaderContainer = styled.header`
         }
         h3{
             font-weight: 500;
+            @media screen and (max-width: 750px) {
+                display: none;
+            }  
         }
     }
 `
@@ -83,6 +121,11 @@ ul {
 
     border-right: 4px solid transparent;
     transition: 0.3s;
+
+    @media screen and (max-width: 750px) {
+        justify-content: center;
+    } 
+
     &:hover{
     border-right: 4px solid white;
 
@@ -90,6 +133,9 @@ ul {
 
         h3{
             font-weight: 500;
+            @media screen and (max-width: 750px) {
+                display: none;
+            }  
         }
     }   
 }

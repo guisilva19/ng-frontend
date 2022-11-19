@@ -12,6 +12,7 @@ align-items: center;
 
 background-color: rgba(0, 0, 0, 0.25);
 position: fixed;
+z-index: 5;
 
 div{
     width: 350px;
