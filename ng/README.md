@@ -13,3 +13,6 @@ Para rodar a aplicação e vizualiza no navegador execute
 ```
 yarn start
 ```
+
+### Deploy da aplicação
+https://ng-ebon.vercel.app/
