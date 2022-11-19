@@ -1,8 +1,8 @@
-import Balance from "../../components/Balance/balance";
+import Balance from "../../components/Balance/Balance";
 import Header from "../../components/Header/header";
 import { Load, Section, Transactions } from "./style";
-import Debiteds from "../../components/Debiteds/debiteds";
-import Crediteds from "../../components/Crediteds/crediteds";
+import Debiteds from "../../components/Debiteds/Debiteds";
+import Crediteds from "../../components/Crediteds/Crediteds";
 import NewTransaction from "../../components/NewTransaction/newTransaction";
 import { useContext } from "react";
 import { Context } from "../../context/AuthContext";
